@@ -208,7 +208,7 @@ function CertCard({ cert, index }) {
             border: `1px solid ${hovered ? cert.color : cert.colorBorder}`,
             background: "rgba(8,18,34,0.75)",
             backdropFilter: "blur(16px)",
-            padding: "28px 26px 24px",
+            padding: "clamp(20px, 5vw, 28px) clamp(16px, 4vw, 26px) clamp(16px, 4vw, 24px)",
             overflow: "hidden",
             transition: "all 0.35s cubic-bezier(0.16,1,0.3,1)",
             boxShadow: hovered
@@ -302,16 +302,18 @@ function CertCard({ cert, index }) {
             margin: "0 0 3px",
             lineHeight: 1.25,
             letterSpacing: "-0.01em",
+            wordBreak: "break-word",
           }}>
             {cert.title}
           </h3>
           <p style={{
             fontFamily: "'Syne', sans-serif",
             fontWeight: 600,
-            fontSize: "0.9rem",
+            fontSize: "clamp(0.85rem, 3.5vw, 0.9rem)",
             color: cert.color,
             margin: "0 0 16px",
             opacity: 0.85,
+            wordBreak: "break-word",
           }}>
             {cert.subtitle}
           </p>
@@ -344,7 +346,7 @@ export default function Certificates() {
   const [titleRef, titleInView] = useInView(0.1);
 
   return (
-    <section style={{ maxWidth: "1100px", margin: "0 auto", padding: "80px 24px" }}>
+    <section style={{ maxWidth: "1100px", margin: "0 auto", padding: "clamp(60px, 10vw, 80px) clamp(16px, 4vw, 24px)" }}>
 
       {/* Header */}
       <div
