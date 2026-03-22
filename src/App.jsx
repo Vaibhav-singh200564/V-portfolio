@@ -142,7 +142,7 @@ function HeroSection() {
       <div className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full pointer-events-none"
         style={{ background: "radial-gradient(circle, rgba(129,140,248,0.08) 0%, transparent 70%)", filter: "blur(40px)", animation: "pulse 5s ease-in-out infinite reverse" }} />
 
-      <div className="flex flex-col md:flex-row items-center justify-between gap-12 w-full max-w-6xl mx-auto z-10" style={{ opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(40px)", transition: "all 0.9s cubic-bezier(0.16,1,0.3,1)" }}>
+      <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-12 w-full max-w-6xl mx-auto z-10" style={{ opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(40px)", transition: "all 0.9s cubic-bezier(0.16,1,0.3,1)" }}>
 
         {/* Left Content */}
         <div className="flex-1 text-center md:text-left flex flex-col items-center md:items-start pl-0 lg:pl-4">
