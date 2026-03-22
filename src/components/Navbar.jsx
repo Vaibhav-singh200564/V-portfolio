@@ -54,7 +54,7 @@ function Navbar() {
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Mono:wght@400;500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Syne:wght@400;500;600;700;800;900&family=DM+Mono:wght@300;400;500;600;700&display=swap');
 
         @keyframes navSlideDown {
           from { opacity: 0; transform: translateY(-20px); }
@@ -139,7 +139,7 @@ function Navbar() {
           position:       "sticky",
           top:            0,
           zIndex:         1000,
-          padding:        scrolled ? "0 48px" : "0 48px",
+          padding:        scrolled ? "0 clamp(16px, 5vw, 48px)" : "0 clamp(20px, 6vw, 48px)",
           height:         scrolled ? "60px" : "72px",
           display:        "flex",
           alignItems:     "center",

@@ -6,11 +6,8 @@ import Skills from "./components/Skills";
 import Contact from "./components/Contact";
 import Certificates from "./components/Certificates";
 import HeroAvatar from './components/HeroAvatar';
-import RainEffect from './components/RainEffect';
-import SolarSystem from './components/SolarSystem';
 import CodingStats from './components/CodingStats';
 import CodingActivity from './components/CodingActivity';
-import SmokeEffect from './components/SmokeEffect';
 
 /* ─── Floating Particle Canvas ─── */
 function ParticleCanvas() {
@@ -255,7 +252,7 @@ function Footer() {
         {/* Top Grid Area */}
         <div style={{ 
           display: "grid", 
-          gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", 
+          gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 280px), 1fr))", 
           gap: "48px", 
           marginBottom: "64px" 
         }}>
@@ -355,10 +352,10 @@ function App() {
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500&family=Syne:wght@400;700;800;900&family=DM+Mono:wght@300;400;500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Syne:wght@400;500;600;700;800;900&family=DM+Mono:wght@300;400;500;600;700&display=swap');
         * { box-sizing: border-box; }
         :root { --bg-primary: #020817; --bg-secondary: #0a1628; --accent-cyan: #38bdf8; --accent-purple: #818cf8; }
-        body { background: var(--bg-primary); font-family: 'DM Mono', monospace; margin: 0; }
+        body { background: var(--bg-primary); font-family: 'DM Mono', monospace; font-weight: 500; margin: 0; }
         ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-track { background: #020817; }
         ::-webkit-scrollbar-thumb { background: linear-gradient(#38bdf8, #818cf8); border-radius: 99px; }
@@ -375,13 +372,10 @@ function App() {
         .bouncy-btn-reverse:active { transform: translateY(2px) rotate(-4deg) scale(0.9) !important; }
       `}</style>
 
-      <div className="relative min-h-screen text-white"
+      <div className="relative min-h-screen text-white overflow-x-hidden w-full"
         style={{ background: "linear-gradient(135deg, #020817 0%, #0a1628 50%, #020817 100%)" }}>
 
-        <SmokeEffect />
         <ParticleCanvas />
-        <SolarSystem />
-        <RainEffect />
 
         <div className="fixed top-0 left-0 right-0 h-px z-50"
           style={{ background: "linear-gradient(to right, transparent, #38bdf8, #818cf8, #c084fc, transparent)" }} />

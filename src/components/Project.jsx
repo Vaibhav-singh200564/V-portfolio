@@ -203,17 +203,19 @@ function ProjectCard({ project, index, visible }) {
         {/* Tagline */}
         <p style={{
           fontFamily: "'DM Mono', monospace",
-          fontSize: "0.7rem",
+          fontSize: "0.75rem",
+          fontWeight: 700,
           color: project.color,
-          opacity: 0.8,
-          letterSpacing: "0.06em",
+          opacity: 0.9,
+          letterSpacing: "0.05em",
           marginBottom: "10px",
-        }}>// {project.tagline}</p>
+        }}>{project.tagline}</p>
 
         {/* Description */}
         <p style={{
-          color: "#64748b",
-          fontSize: "0.82rem",
+          color: "#ffffff",
+          fontWeight: 700,
+          fontSize: "0.85rem",
           lineHeight: 1.75,
           marginBottom: "18px",
           fontFamily: "'DM Mono', monospace",
@@ -348,7 +350,7 @@ function Projects() {
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800;900&family=DM+Mono:wght@300;400;500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Syne:wght@400;500;600;700;800;900&family=DM+Mono:wght@300;400;500;600;700&display=swap');
         @keyframes gradientShift {
           0%   { background-position: 0% 50%; }
           50%  { background-position: 100% 50%; }
@@ -416,8 +418,8 @@ function Projects() {
           {/* Cards */}
           <div ref={cardsRef} style={{
             display:"grid",
-            gridTemplateColumns:"repeat(auto-fit, minmax(340px, 1fr))",
-            gap:"24px",
+            gridTemplateColumns:"repeat(auto-fit, minmax(min(100%, 340px), 1fr))",
+            gap:"32px",
             alignItems:"stretch",
           }}>
             {filtered.map((project, i) => (
@@ -427,8 +429,8 @@ function Projects() {
 
           {/* Bottom CTA */}
           <div style={{ textAlign:"center", marginTop:"64px", opacity: sectionVisible ? 1 : 0, transition:"opacity 0.8s ease 0.6s" }}>
-            <p style={{ color:"#334155", fontSize:"0.78rem", fontFamily:"'DM Mono', monospace", letterSpacing:"0.08em", marginBottom:"18px" }}>
-              // more coming soon...
+            <p style={{ color:"#e2e8f0", fontWeight: 700, fontSize:"0.8rem", fontFamily:"'DM Mono', monospace", letterSpacing:"0.08em", marginBottom:"18px" }}>
+              more coming soon...
             </p>
             <a
               href="https://github.com/Vaibhav-singh200564"

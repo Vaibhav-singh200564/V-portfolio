@@ -198,7 +198,7 @@ function About() {
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800;900&family=DM+Mono:wght@300;400;500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Syne:wght@400;500;600;700;800;900&family=DM+Mono:wght@300;400;500;600;700&display=swap');
 
         @keyframes floatOrb {
           from { transform: translate(0, 0) scale(1); }

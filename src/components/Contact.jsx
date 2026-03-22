@@ -138,9 +138,10 @@ function SocialBento({ icon, title, subtitle, bg, href, color, delay }) {
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         onMouseMove={handleMouseMove}
+        className="social-card-content"
         style={{
           display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center",
-          padding: "36px 24px", width: "100%",
+          padding: "clamp(20px, 5vw, 36px) clamp(16px, 4vw, 24px)", width: "100%",
           borderRadius: "32px",
           textDecoration: "none",
           background: "rgba(10, 20, 35, 0.6)",
@@ -182,8 +183,8 @@ function SocialBento({ icon, title, subtitle, bg, href, color, delay }) {
         }} />
 
         {/* Floating Icon */}
-        <div style={{
-          width: "72px", height: "72px", borderRadius: "24px",
+        <div className="social-card-icon" style={{
+          width: "clamp(56px, 12vw, 72px)", height: "clamp(56px, 12vw, 72px)", borderRadius: "24px",
           background: hovered ? "rgba(255,255,255,0.15)" : "rgba(255,255,255,0.05)",
           border: hovered ? `1px solid ${color}80` : "1px solid rgba(255,255,255,0.1)",
           display: "flex", alignItems: "center", justifyContent: "center",
@@ -198,31 +199,34 @@ function SocialBento({ icon, title, subtitle, bg, href, color, delay }) {
         </div>
 
         {/* Text Area */}
-        <h4 style={{ 
-          fontFamily: "'Syne', sans-serif", fontSize: "1.25rem", fontWeight: 800, 
-          color: "#fff", margin: "0 0 4px", zIndex: 2,
-          transform: hovered ? "translateZ(30px)" : "translateZ(10px)",
-          transition: "all 0.4s ease"
-        }}>
-          {title}
-        </h4>
-        
-        <p style={{ 
-          fontFamily: "'Outfit', sans-serif", fontSize: "0.85rem", 
-          color: hovered ? "#f8fafc" : "rgba(255,255,255,0.5)", 
-          margin: 0, textAlign: "center", zIndex: 2,
-          transform: hovered ? "translateZ(20px)" : "translateZ(5px)",
-          transition: "all 0.4s ease",
-          letterSpacing: "1px", textTransform: "uppercase", fontWeight: 600,
-          background: hovered ? `linear-gradient(90deg, #fff, ${color})` : "none",
-          WebkitBackgroundClip: hovered ? "text" : "none",
-          WebkitTextFillColor: hovered ? "transparent" : "rgba(255,255,255,0.5)"
-        }}>
-          {subtitle}
-        </p>
+        <div className="social-card-text" style={{ display: "flex", flexDirection: "column", alignItems: "center", zIndex: 2 }}>
+          <h4 className="social-card-title" style={{ 
+            fontFamily: "'Syne', sans-serif", fontSize: "clamp(1rem, 4.5vw, 1.25rem)", fontWeight: 800, 
+            wordBreak: "break-word", textAlign: "center",
+            color: "#fff", margin: "0 0 4px",
+            transform: hovered ? "translateZ(30px)" : "translateZ(10px)",
+            transition: "all 0.4s ease"
+          }}>
+            {title}
+          </h4>
+          
+          <p className="social-card-subtitle" style={{ 
+            fontFamily: "'Outfit', sans-serif", fontSize: "0.85rem", 
+            color: hovered ? "#f8fafc" : "rgba(255,255,255,0.5)", 
+            margin: 0, textAlign: "center",
+            transform: hovered ? "translateZ(20px)" : "translateZ(5px)",
+            transition: "all 0.4s ease",
+            letterSpacing: "1px", textTransform: "uppercase", fontWeight: 600,
+            background: hovered ? `linear-gradient(90deg, #fff, ${color})` : "none",
+            WebkitBackgroundClip: hovered ? "text" : "none",
+            WebkitTextFillColor: hovered ? "transparent" : "rgba(255,255,255,0.5)"
+          }}>
+            {subtitle}
+          </p>
+        </div>
 
         {/* Arrow Action Icon */}
-        <div style={{
+        <div className="social-card-arrow" style={{
           position: "absolute", bottom: "20px", right: "20px",
           width: "36px", height: "36px", borderRadius: "50%",
           background: `linear-gradient(135deg, ${color}, ${color}80)`,
@@ -283,7 +287,7 @@ function Contact() {
   };
 
   return (
-    <section id="contact" style={{ position: "relative", padding: "120px 24px", overflow: "hidden" }}>
+    <section id="contact" style={{ position: "relative", padding: "clamp(80px, 12vw, 120px) clamp(16px, 5vw, 24px)", overflow: "hidden" }}>
       
       {/* Background Decor */}
       <div style={{ position: "absolute", top: "10%", right: "-10%", width: "600px", height: "600px", background: "radial-gradient(circle, rgba(129,140,248,0.05) 0%, transparent 70%)", filter: "blur(80px)", pointerEvents: "none" }} />
@@ -298,7 +302,7 @@ function Contact() {
           transition: "all 0.8s cubic-bezier(0.16,1,0.3,1)"
         }}>
           <h2 style={{
-            fontFamily: "'Syne', sans-serif", fontWeight: 900, fontSize: "clamp(3rem, 8vw, 5.5rem)",
+            fontFamily: "'Syne', sans-serif", fontWeight: 900, fontSize: "clamp(2.2rem, 8vw, 5.5rem)",
             lineHeight: 1.1, margin: "0 0 20px",
             background: "linear-gradient(135deg, #ffffff 0%, #e2e8f0 40%, #94a3b8 100%)",
             WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
@@ -315,7 +319,7 @@ function Contact() {
         </div>
 
         {/* BENTO GRID LAYOUT */}
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "24px", direction: "rtl" }} className="contact-bento">
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 320px), 1fr))", gap: "24px", direction: "rtl" }} className="contact-bento">
           
           {/* Form */}
           <div style={{
@@ -323,7 +327,7 @@ function Contact() {
             background: "rgba(10, 22, 40, 0.4)",
             border: "1px solid rgba(56,189,248,0.15)",
             borderRadius: "32px",
-            padding: "48px 40px",
+            padding: "clamp(24px, 6vw, 48px) clamp(20px, 5vw, 40px)",
             boxShadow: "0 20px 50px rgba(0,0,0,0.5), inset 0 0 0 1px rgba(255,255,255,0.05)",
             backdropFilter: "blur(20px)",
           }}>
@@ -356,7 +360,7 @@ function Contact() {
           </div>
 
           {/* Social Bento Grid */}
-          <div style={{ direction: "ltr", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "24px", gridAutoRows: "1fr" }}>
+          <div className="social-bento" style={{ direction: "ltr", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "24px", gridAutoRows: "1fr" }}>
             
             <div style={{ gridColumn: "1 / -1", display: "flex", height: "100%" }}>
               <SocialBento
@@ -395,6 +399,15 @@ function Contact() {
       <style>{`
         @media (max-width: 900px) {
           .contact-bento { grid-template-columns: 1fr !important; direction: ltr !important; }
+        }
+        @media (max-width: 650px) {
+          .social-bento { grid-template-columns: 1fr !important; gap: 16px !important; }
+          .social-card-content { flex-direction: row !important; padding: 20px 24px !important; justify-content: flex-start !important; align-items: center !important; }
+          .social-card-icon { margin-bottom: 0 !important; margin-right: 20px !important; width: 48px !important; height: 48px !important; transform: translateZ(10px) !important; }
+          .social-card-text { align-items: flex-start !important; text-align: left !important; }
+          .social-card-title { font-size: 1.15rem !important; text-align: left !important; word-break: break-word !important; }
+          .social-card-subtitle { font-size: 0.8rem !important; text-align: left !important; }
+          .social-card-arrow { display: none !important; }
         }
         input:-webkit-autofill, textarea:-webkit-autofill {
           -webkit-box-shadow: 0 0 0px 1000px #061022 inset !important;

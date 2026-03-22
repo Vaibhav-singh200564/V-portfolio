@@ -56,11 +56,11 @@ export default function CodingActivity() {
               </h3>
             </div>
             
-            <div className="w-full relative z-10 flex my-4 min-h-[150px]">
+            <div className="w-full relative z-10 flex my-4 justify-center">
               <img 
                 src={`https://github-readme-activity-graph.vercel.app/graph?username=${githubUser}&theme=react-dark&hide_border=true&bg_color=0D1117&color=38bdf8`}
                 alt="GitHub Activity Graph" 
-                className="w-full object-cover sm:object-contain rounded-xl min-w-full"
+                className="w-full h-auto object-contain rounded-xl drop-shadow-lg"
               />
             </div>
             
@@ -83,7 +83,7 @@ export default function CodingActivity() {
               </h3>
             </div>
             
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 relative z-10 w-full max-w-5xl mx-auto mt-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 relative z-10 w-full max-w-5xl mx-auto mt-4">
               
               <div className="flex flex-col items-center justify-center bg-slate-800/40 p-6 md:p-8 rounded-2xl border border-slate-700/50 hover:bg-slate-800/60 transition-colors shadow-lg">
                   <span className="text-yellow-400 font-black text-4xl md:text-5xl mb-3">730</span>

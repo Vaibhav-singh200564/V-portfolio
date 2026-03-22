@@ -405,10 +405,9 @@ export default function Certificates() {
         </p>
       </div>
 
-      {/* Grid */}
       <div style={{
         display: "grid",
-        gridTemplateColumns: "repeat(auto-fill, minmax(310px, 1fr))",
+        gridTemplateColumns: "repeat(auto-fill, minmax(min(100%, 310px), 1fr))",
         gap: "20px",
       }}>
         {CERTS.map((cert, i) => (
