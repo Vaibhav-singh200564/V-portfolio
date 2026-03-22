@@ -374,10 +374,11 @@ export default function Certificates() {
         <h2 style={{
           fontFamily: "'Syne', sans-serif",
           fontWeight: 900,
-          fontSize: "clamp(2.2rem, 5.5vw, 3.4rem)",
+          fontSize: "clamp(1.8rem, 6vw, 3.4rem)",
           lineHeight: 1.05,
           letterSpacing: "-0.03em",
           margin: "0 0 16px",
+          wordBreak: "break-word"
         }}>
           <span style={{
             background: "linear-gradient(135deg, #f1f5f9 0%, #94a3b8 100%)",

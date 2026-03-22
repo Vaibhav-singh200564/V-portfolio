@@ -28,10 +28,11 @@ export default function CodingActivity() {
           transition: "all 0.8s cubic-bezier(0.16,1,0.3,1)"
         }}>
           <h2 style={{
-            fontFamily: "'Syne', sans-serif", fontWeight: 900, fontSize: "clamp(2.5rem, 5vw, 4rem)",
+            fontFamily: "'Syne', sans-serif", fontWeight: 900, fontSize: "clamp(1.8rem, 6vw, 4rem)",
             background: "linear-gradient(135deg, #ffffff 0%, #e2e8f0 40%, #94a3b8 100%)",
             WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
-            margin: "0 0 16px"
+            margin: "0 0 16px",
+            wordBreak: "break-word"
           }}>
             Coding Activity & <span style={{ background: "linear-gradient(135deg, #38bdf8, #818cf8)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>Consistency</span>
           </h2>
