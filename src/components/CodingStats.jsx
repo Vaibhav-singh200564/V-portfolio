@@ -283,7 +283,6 @@ export default function CodingStats() {
                       value={inputVal}
                       onChange={(e) => setInputVal(e.target.value)}
                       className="bg-transparent border-none outline-none text-white w-full tracking-wide shadow-none focus:ring-0 p-0"
-                      autoFocus
                       autoComplete="off"
                       spellCheck="false"
                     />
